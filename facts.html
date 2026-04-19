@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <title>Fun Facts</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <link id="main-ind" rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="top-bar">
+    <div class="whole">
+      <h1 class="title"><a href="index.html">Mohnish Bandari</a></h1>
+      <div class="butdiv">
+        <button onclick="toggleStyleSheet()" type="button">Toggle Style</button>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="link-div">
+        <a class="links" href="index.html">Home</a>
+      </div>
+      <div class="link-div">
+        <a class="links" href="technical.html">Technical</a>
+      </div>
+      <div class="link-div">
+        <a class="links" href="qualifications.html">Qualification</a>
+      </div>
+      <div class="link-div">
+        <a class="links" href="service.html">Service</a>
+      </div>
+      <div class="link-div">
+        <a class="links" href="facts.html">Fun Facts</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="nba-fact-container" style="text-align: center; padding: 20px; background-color: aliceblue;">
+    <h2 style="font-family: Arial, sans-serif;">Fun NBA Fact</h2>
+    <p id="fact" style="font-family: Arial, sans-serif; font-size: 18px;">Did you know? Michael Jordan won 6 NBA
+      championships with the Chicago Bulls!</p>
+    <button id="factButton" style="padding: 10px 20px; font-size: 16px; cursor: pointer;"
+      onclick="generateFact()">Generate New Fact</button>
+  </div>
+  <div class="prompt-text">
+    <div>
+      <h1>AI Prompt</h1>
+    </div>
+    <div>
+      <h3>Create an html page that displays a fun fact about the NBA. When you click a button a new fact appears. Only
+        provide the body of the html since I am keeping an existing navigation bar. Provide 100 NBA facts and include
+        the styling within the HTML.</h3>
+    </div>
+  </div>
+
+  <script>
+    const facts = [
+      "Kareem Abdul-Jabbar is the NBA's all-time leading scorer with 38,387 points!",
+      "Wilt Chamberlain scored 100 points in a single game on March 2, 1962!",
+      "The Boston Celtics have won the most NBA championships with 17 titles!",
+      "Shaquille O'Neal made only one three-point shot in his entire career!",
+      "Muggsy Bogues, at 5'3\", was the shortest player to ever play in the NBA.",
+      "The NBA was founded in 1946 as the Basketball Association of America (BAA).",
+      "The first NBA game was played on November 1, 1946, in Toronto, Canada.",
+      "LeBron James has been to the NBA Finals 10 times as of 2021!",
+      "Dirk Nowitzki was the first European-born player to win NBA MVP in 2007.",
+      "In 1995, the Toronto Raptors and Vancouver Grizzlies became the first NBA teams based in Canada.",
+      "The shot clock was introduced to the NBA in 1954 to speed up the game.",
+      "Kobe Bryant is the youngest player to score 30,000 points in NBA history.",
+      "The NBA logo is based on the silhouette of Hall of Famer Jerry West.",
+      "Michael Jordan has won 6 NBA championships with the Chicago Bulls.",
+      "Vince Carter is the only player in NBA history to play in 4 different decades (1990s, 2000s, 2010s, 2020s).",
+      "The Chicago Bulls are the only team in NBA history to win 72 games in a single season (1995-96).",
+      "Bill Russell has won the most NBA championships as a player, with 11 titles.",
+      "The tallest player in NBA history is Gheorghe Muresan, standing at 7'7\".",
+      "In 2000, Shaquille O'Neal became the last player to win the regular season MVP, All-Star Game MVP, and Finals MVP in the same year.",
+      "Steve Nash is one of the few players to win back-to-back MVPs without winning a championship.",
+      "Hakeem Olajuwon leads the NBA in all-time blocked shots with 3,830.",
+      "Dennis Rodman led the NBA in rebounds per game for seven consecutive seasons (1992-1998).",
+      "Steph Curry holds the NBA record for most three-pointers made in a season with 402 in 2016.",
+      "Klay Thompson once scored 37 points in a single quarter, setting an NBA record.",
+      "Tim Duncan is the only player in NBA history to be selected to both All-NBA and All-Defensive teams in each of his first 13 seasons.",
+      "Allen Iverson won four NBA scoring titles despite being only 6 feet tall.",
+      "Kevin Garnett is one of only five players in NBA history to win both MVP and Defensive Player of the Year awards.",
+      "Oscar Robertson is the only player in NBA history to average a triple-double for an entire season before Russell Westbrook did it.",
+      "Russell Westbrook has averaged a triple-double for three different seasons.",
+      "Larry Bird and Magic Johnson met in the NBA Finals three times during the 1980s, with Magic winning two of those matchups.",
+      "The NBA's annual slam dunk contest was first held in 1984.",
+      "The Phoenix Suns are the only team with a winning record in NBA history that has never won an NBA championship.",
+      "Wilt Chamberlain once averaged 50.4 points per game over an entire season (1961-62).",
+      "Charles Barkley never won an NBA championship despite being an 11-time All-Star and winning MVP in 1993.",
+      "Karl Malone is second on the NBA's all-time scoring list with 36,928 points.",
+      "Magic Johnson was the tallest point guard in NBA history at 6'9\".",
+      "Kawhi Leonard was the first player to win Finals MVP with a team from both the Eastern and Western Conferences.",
+      "The New York Knicks were the first NBA champions in 1951.",
+      "Yao Ming, standing at 7'6\", was one of the tallest players in NBA history and is a Hall of Famer.",
+      "Michael Jordan retired from the NBA three times throughout his career.",
+      "The Miami Heat won their first NBA championship in 2006, led by Dwyane Wade and Shaquille O'Neal.",
+      "The Golden State Warriors set the NBA record for the best regular-season record, going 73-9 in the 2015-16 season.",
+      "LeBron James became the youngest player to reach 30,000 career points at age 33.",
+      "David Robinson scored 71 points in a game in 1994, one of the highest single-game point totals in NBA history.",
+      "The Milwaukee Bucks won their first NBA championship in 1971, led by Kareem Abdul-Jabbar and Oscar Robertson.",
+      "Patrick Ewing is considered one of the best players in NBA history who never won a championship.",
+      "The 2001 Los Angeles Lakers went 15-1 in the playoffs, one of the most dominant postseason runs in NBA history.",
+      "The 1996 NBA draft class is considered one of the best in history, with players like Kobe Bryant, Allen Iverson, and Steve Nash.",
+      "Scottie Pippen won six NBA championships alongside Michael Jordan but never won an MVP award.",
+      "The San Antonio Spurs have won five NBA championships, all under coach Gregg Popovich.",
+      "In 2007, LeBron James led the Cleveland Cavaliers to their first-ever NBA Finals appearance.",
+      "The Toronto Raptors won their first NBA championship in 2019, led by Kawhi Leonard.",
+      "Manu Ginobili is credited with popularizing the Eurostep in the NBA.",
+      "Dirk Nowitzki played 21 seasons with the Dallas Mavericks, setting the record for the longest tenure with a single team.",
+      "Steph Curry has made over 3,000 career three-pointers, the most in NBA history.",
+      "Kareem Abdul-Jabbar won six NBA MVP awards, the most by any player in history.",
+      "The 2008 Boston Celtics' Big Three of Paul Pierce, Kevin Garnett, and Ray Allen won the NBA championship in their first season together.",
+      "Wilt Chamberlain once led the NBA in assists in 1967-68, the only center to do so.",
+      "Kevin Durant won back-to-back NBA Finals MVPs with the Golden State Warriors in 2017 and 2018.",
+      "Charles Barkley is one of four players in NBA history with 20,000 points, 10,000 rebounds, and 4,000 assists.",
+      "The Utah Jazz have reached the NBA Finals twice but have never won a championship.",
+      "Vince Carter's iconic 2000 Slam Dunk Contest performance is considered one of the best in NBA history.",
+      "Pau Gasol was the first Spanish player to win an NBA championship.",
+      "The Denver Nuggets won their first NBA championship in 2023, led by Nikola Jokić.",
+      "The Detroit Pistons won back-to-back NBA championships in 1989 and 1990, led by the 'Bad Boys.'",
+      "Giannis Antetokounmpo won back-to-back MVPs in 2019 and 2020.",
+      "Derrick Rose became the youngest player to win MVP at the age of 22 in 2011.",
+      "The Orlando Magic have made two NBA Finals appearances but have never won a title.",
+      "Shaquille O'Neal won four NBA championships, three with the Lakers and one with the Heat.",
+      "Chris Paul is regarded as one of the best point guards in NBA history, though he has never won a championship.",
+      "Paul George has played for both the Indiana Pacers and Los Angeles Clippers but has yet to win an NBA title.",
+      "Ray Allen's three-pointer in Game 6 of the 2013 NBA Finals is considered one of the greatest shots in NBA history.",
+      "James Harden is one of the best offensive players in NBA history, with multiple scoring titles and an MVP award.",
+      "Dikembe Mutombo is famous for his shot-blocking ability and his signature finger-wag gesture.",
+      "The Houston Rockets won back-to-back NBA championships in 1994 and 1995, led by Hakeem Olajuwon.",
+      "The Philadelphia 76ers have won three NBA championships, their last in 1983.",
+      "The Indiana Pacers have made one NBA Finals appearance in 2000 but lost to the Los Angeles Lakers.",
+      "Damian Lillard is one of the best clutch performers in the NBA, known for his long-range shooting.",
+      "The Cleveland Cavaliers won their first NBA championship in 2016, led by LeBron James.",
+      "Isiah Thomas led the Detroit Pistons to two NBA championships in 1989 and 1990.",
+      "The Atlanta Hawks won their only NBA championship in 1958 when they were based in St. Louis.",
+      "Karl-Anthony Towns holds the record for most points scored by a center in a game with 60.",
+      "Kobe Bryant won two NBA Finals MVP awards in 2009 and 2010.",
+      "Russell Westbrook holds the NBA record for most triple-doubles in a season with 42.",
+      "The Brooklyn Nets were originally founded as the New Jersey Americans in 1967.",
+      "John Stockton holds the NBA record for most career assists with 15"];
+
+    function generateFact() {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      document.getElementById('fact').innerHTML = facts[randomIndex];
+    }
+  </script>
+</body>
+<script src="functions.js"></script>
+
+</html>

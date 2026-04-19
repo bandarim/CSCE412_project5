@@ -1,0 +1,291 @@
+/* Originally I thought the second style would simply be switching the colors which is why my css is 
+set up to where all of the colors are at the top */
+.links,
+.title,
+.myport,
+.vol {
+    color: #EEEEEE;
+}
+
+.whole {
+    background-color: #222831;
+}
+
+.navbar {
+    background-color: #31363F;
+}
+
+.about-text,
+.qual-text,
+.project {
+    background-color: #EEEEEE;
+}
+
+.portholder {
+    background-color: #6f7279;
+}
+
+.about-text,
+.qual-text,
+.project {
+    color: #222831;
+}
+
+.profilepic,
+.resume,
+.service {
+    background-color: #d6d6d6;
+}
+
+body {
+    background-color: #222831;
+}
+
+.title {
+    font-size: 3em;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+a {
+    color: #EEEEEE;
+    text-decoration: none;
+}
+
+.whole {
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+}
+
+.links {
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+.container,
+.container2 {
+    display: flex;
+    height: 75%;
+    margin-bottom: 2%;
+}
+
+.about-text {
+    padding: 20px;
+}
+
+.about-text,
+.techcontent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.profilepic {
+    flex: 1;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    width: 30%;
+    margin: 2%;
+}
+
+.wordle-icon {
+    height: 70%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.go-icon {
+    width: 40%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.pp {
+    max-width: 100%;
+    height: auto;
+}
+
+.about {
+    font-size: 2em;
+    text-decoration: underline;
+    margin-top: 4%;
+    margin-bottom: 0px;
+}
+
+.me {
+    font-size: 1.7em;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+.tech-text {
+    font-size: 1.4em;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.portholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 10%;
+}
+
+.myport,
+.vol {
+    text-align: center;
+    margin: 0%;
+    width: 100%;
+}
+
+.splitcont {
+    display: flex;
+    height: 170%;
+}
+
+.qual-text {
+    width: 40%;
+    border-radius: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 1.35em;
+    text-align: center;
+}
+
+.qual-text h2 {
+    text-decoration: underline;
+}
+
+.resume {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    border-radius: 10px;
+    font-size: 1.35em;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.resume iframe {
+    flex: 1;
+    width: 100%;
+    height: 87%;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.service-header {
+    font-size: 2em;
+    text-decoration: underline;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.volunteer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service {
+    flex: 1;
+    padding-left: 7%;
+    padding-right: 7%;
+    border-radius: 10px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-size: 1.4em;
+    margin: 0;
+}
+
+.vol {
+    font-size: 1.5em;
+}
+
+.kcb,
+.boyscout {
+    width: 80%;
+    margin-bottom: 15%;
+}
+
+.humanwho {
+    width: 70%;
+    margin-bottom: 15%;
+}
+
+.bigevent {
+    width: 95%;
+    margin-bottom: 15%;
+}
+
+.embed {
+    color: rgb(140, 180, 255);
+}
+
+.embed:hover {
+    text-decoration: underline;
+}
+
+button {
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 10px;
+    color: #EEEEEE;
+    background-color: #222831;
+}
+
+.prompt-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #d6d6d6;
+    color: #31363F;
+}
+
+.prompt-text h1 {
+    margin-bottom: 15%;
+}
+
+.prompt-text h3 {
+    margin-top: 0;
+    margin-bottom: 2%;
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: center;
+}
